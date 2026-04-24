@@ -1,4 +1,4 @@
-package com.meditrack;
+package com.meditrack.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,17 +13,13 @@ public class DBConnection {
     private static Connection connection;
 
     public static Connection getConnection() throws SQLException {
-        // Validation: check the environment variables are available
         if (URL == null || USER == null || PASSWORD == null) {
             throw new SQLException("Database credentials not found in Environment Variables!");
         }
 
         if (connection == null || connection.isClosed()) {
             try {
-                // Loading the MySQL Driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
-
-                // Establishing the link
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
                 System.out.println("Database Connected Successfully!");
             } catch (ClassNotFoundException e) {
