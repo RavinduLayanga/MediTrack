@@ -29,6 +29,9 @@ public abstract class Person {
         return cleanName.trim();
     }
 
+    public Address getAddress() {
+        return address;
+    }
 
     public String getFullName() {
         return firstName + " " + lastName;

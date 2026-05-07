@@ -31,7 +31,7 @@ public class Category {
         }
 
         // allow only letters, numbers, and basic spaces/hyphens
-        if (!cleanName.matches("^[a-zA-Z0-9\\s\\-]+$")) {
+        if (!cleanName.matches("^[a-zA-Z0-9\\s\\-&]+$")) {
             throw new IllegalArgumentException("Category name contains invalid characters.");
         }
 

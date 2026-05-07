@@ -11,4 +11,5 @@ public interface UserDAO {
     List<User> getAllUsers();
     User updateUser(User user);
     boolean deleteUser(int id);
+    boolean updatePassword(int userId, String newHashedPassword);
 }

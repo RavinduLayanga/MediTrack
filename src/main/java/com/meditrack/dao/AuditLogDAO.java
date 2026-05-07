@@ -7,6 +7,7 @@ import java.util.List;
 public interface AuditLogDAO {
     void logAction(AuditLog log);
     List<AuditLog> getAllLogs();
+    List<AuditLog> getPaginatedLogs(int pageNumber);
     List<AuditLog> getLogsByUser(int userId);
     List<AuditLog> getLogsByTable(String tableName);
     List<AuditLog> getLogsByDateRange(LocalDateTime start, LocalDateTime end);
